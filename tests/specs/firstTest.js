@@ -14,7 +14,7 @@ describe("LetCode Launch test",()=>{
     },10000);
 
     it("Validate user login", async ()=>{
-        await homePage.loginUser('deepank251996@gmail.com','Deepank@2021')
+        await homePage.loginUser( process.env.email,process.env.password);
         await browser.sleep(5000);
     },20000);
 

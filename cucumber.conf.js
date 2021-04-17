@@ -20,6 +20,7 @@ exports.config={
         //let {setDefaultTimeout} = require('@cucumber/cucumber');
         //setDefaultTimeout(50*1000);
         //browser.waitForAngularEnabled(false);
+        require('dotenv').config();
         browser.manage().window().maximize(); // maximize the browser before executing the feature files
     }
 }

@@ -2,7 +2,7 @@ require('@babel/register');
 require('@babel/polyfill');
 
 exports.config={
-    directConnect: true,
+    //directConnect: true,
     capabilities:{
         browserName: 'chrome'
     },

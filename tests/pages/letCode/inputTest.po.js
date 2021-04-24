@@ -20,7 +20,7 @@ class InputTest extends BasePage{
         let text= await this.get_txt.getAttribute('innerText');
         console.log(text);
         await this.clear_txt.clear();
-        let enable = this.noEdit_txt.isEnabled();
+        let enable = await this.noEdit_txt.isEnabled();
         console.log(enable);
         let readonly=await this.dontwrite_txt.getAttribute("readonly");
         console.log(readonly==null?"readonly":"not read only");

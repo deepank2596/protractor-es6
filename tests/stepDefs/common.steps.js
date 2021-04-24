@@ -1,10 +1,11 @@
 import {After, Given, Then, When} from '@cucumber/cucumber';
 import { browser } from 'protractor';
-import {HomePage,Header,InputTest} from '../pages/letCode/index'
+import {HomePage,Header,InputTest,SelectTest} from '../pages/letCode/index'
 
 let homePage= new HomePage();
 let header= new Header();
 let inputTestPage= new InputTest();
+let selectTest= new SelectTest();
 
 After({tags:"@testpage",timeout: 4* 5000},async ()=>{
     await homePage.navigateBack();
@@ -39,4 +40,5 @@ Then("Validate Select test page",{timeout:5*3000}, async()=>{
     let title= await browser.getTitle();
     console.log(title);
     await homePage.getTitle();
+    await selectTest.validateSelectTestPage();
 });

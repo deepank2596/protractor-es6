@@ -13,3 +13,7 @@ Scenario: Test Input Page
 Scenario: Test Select Page
     Given Validate Select test page
 
+@testpage
+Scenario: Test Windows Page
+    Given Validate Windows test page
+

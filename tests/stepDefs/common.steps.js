@@ -1,11 +1,12 @@
 import {After, Given, Then, When} from '@cucumber/cucumber';
 import { browser } from 'protractor';
-import {HomePage,Header,InputTest,SelectTest} from '../pages/letCode/index'
+import {HomePage,Header,InputTest,SelectTest,WindowsTest} from '../pages/letCode/index'
 
 let homePage= new HomePage();
 let header= new Header();
 let inputTestPage= new InputTest();
 let selectTest= new SelectTest();
+let windowsTest= new WindowsTest();
 
 After({tags:"@testpage",timeout: 4* 5000},async ()=>{
     await homePage.navigateBack();
@@ -41,4 +42,10 @@ Then("Validate Select test page",{timeout:5*3000}, async()=>{
     console.log(title);
     await homePage.getTitle();
     await selectTest.validateSelectTestPage();
+});
+
+Then("Validate Windows test page",{timeout:5*5000}, async function (){
+    await homePage.openWindowPageTest();
+    await windowsTest.singleWindowTest();
+    await browser.sleep(2000);
 });

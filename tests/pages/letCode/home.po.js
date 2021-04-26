@@ -11,6 +11,8 @@ class HomePage extends BasePage{
         this.testPage_button= element(by.buttonText("Let's Go"));
         this.inputPage_btn= element(by.css("button[name='input']"));
         this.selectPage_btn= element(by.css("button#select"));
+        this.windowPage_btn= element(by.name("windows"));
+
     }
 
     async launchApp(){
@@ -38,6 +40,11 @@ class HomePage extends BasePage{
 
     async openSelectPageTest(){
         await this.click(this.selectPage_btn);
+        await this.waitForPageLoad();
+    }
+
+    async openWindowPageTest(){
+        await this.click(this.windowPage_btn);
         await this.waitForPageLoad();
     }
 

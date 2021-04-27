@@ -3,7 +3,7 @@ require('@babel/polyfill');
 
 exports.config={
     //directConnect: true,
-    seleniumAddress: "http://192.168.1.3:4444/wd/hub",
+    //seleniumAddress: "http://192.168.1.3:4444/wd/hub",
     capabilities:{
         browserName: 'chrome'
     },

@@ -1,6 +1,6 @@
 import { browser, ExpectedConditions as EC } from "protractor";
 
-class BasePage {
+export class BasePage {
 
     async get(url) {
         await browser.get(url);
@@ -39,4 +39,3 @@ class BasePage {
     };
 }
 
-exports.BasePage= BasePage;

@@ -1,12 +1,11 @@
 import { browser, by, element } from 'protractor';
 import {BasePage} from '../base.po'
 
-class WindowsTest extends BasePage{
-    constructor(){
-        super();
-        this.homePage_btn= element(by.id("home"));
-        this.multi_btn= element(by.id("multi"));
-    }
+export class WindowsTest extends BasePage{
+    
+    public homePage_btn= element(by.id("home"));
+    public multi_btn= element(by.id("multi"));
+
 
     async singleWindowTest(){
         await this.click(this.homePage_btn);
@@ -25,10 +24,9 @@ class WindowsTest extends BasePage{
         await this.click(this.homePage_btn);
         let parentWindow=await browser.getWindowHandle();
         let windows=await browser.getAllWindowHandles();
-        windows.pop(parentWindow);
-        await browser.switchTo().window(windows[Symbol.iterator]().next());
+        windows.shift();
+        await browser.switchTo().window(windows[Symbol.iterator]().next().value);
         await browser.close();
     }
 }
 
-exports.WindowsTest=WindowsTest;

@@ -4,7 +4,7 @@ import {InputTest} from './inputTest.po';
 import {SelectTest} from './selectTest.po';
 import {WindowsTest} from './windowsTest.po'
 
-module.exports={
+export {
     HomePage,
     Header,
     InputTest,

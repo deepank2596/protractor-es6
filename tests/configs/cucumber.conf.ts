@@ -1,7 +1,6 @@
-require('@babel/register');
-require('@babel/polyfill');
+import { browser, Config } from "protractor";
 
-exports.config={
+export const config:Config={
     directConnect: true,
     //seleniumAddress: "http://192.168.1.3:4444/wd/hub",
     capabilities:{
@@ -12,16 +11,17 @@ exports.config={
     SELENIUM_PROMISE_MANAGER: false,
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
-    specs:['./tests/features/letCodeTest.feature'],
+    specs:['../../features/letCodeTest.feature'],
     cucumberOpts:{
-        require:['./tests/stepDefs/*.js'],
+        require:['../stepDefs/*.js'],
         format:[]
     },
-    onPrepare: function () {
+    onPrepare: async function () {
         //let {setDefaultTimeout} = require('@cucumber/cucumber');
         //setDefaultTimeout(50*1000);
         //browser.waitForAngularEnabled(false);
         require('dotenv').config();
-        browser.manage().window().maximize(); // maximize the browser before executing the feature files
+        await browser.manage().deleteAllCookies();
+        await browser.manage().window().maximize(); // maximize the browser before executing the feature files
     }
 }

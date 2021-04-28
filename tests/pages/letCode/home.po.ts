@@ -1,19 +1,18 @@
 import { browser, by, element, ExpectedConditions as EC} from 'protractor';
 import {BasePage} from  '../base.po';
 
-class HomePage extends BasePage{
-    constructor(){
-        super();
-        this.signIN_btn= element(by.linkText('Log in'));
-        this.username_txt= element(by.name('email'));
-        this.password_txt= element(by.name('password'));
-        this.login_btn= element(by.buttonText('LOGIN'));
-        this.testPage_button= element(by.buttonText("Let's Go"));
-        this.inputPage_btn= element(by.css("button[name='input']"));
-        this.selectPage_btn= element(by.css("button#select"));
-        this.windowPage_btn= element(by.name("windows"));
+export class HomePage extends BasePage{
+   
+    public signIN_btn= element(by.linkText('Log in'));
+    public username_txt= element(by.name('email'));
+    public password_txt= element(by.name('password'));
+    public login_btn= element(by.buttonText('LOGIN'));
+    public testPage_button= element(by.buttonText("Let's Go"));
+    public inputPage_btn= element(by.css("button[name='input']"));
+    public selectPage_btn= element(by.css("button#select"));
+    public windowPage_btn= element(by.name("windows"));
 
-    }
+    
 
     async launchApp(){
         await this.get('https://letcode.in/');
@@ -50,4 +49,3 @@ class HomePage extends BasePage{
 
 }
 
-exports.HomePage=HomePage;

@@ -8,7 +8,7 @@ describe("LetCode Launch test",()=>{
         await homePage.launchApp();
     });
 
-    it("Validate Home Page Title", async()=>{
+    it("Validate Home Page Title", async()=>{ 
         let title=await browser.getTitle();
         await expect(title).toBe("LetCode - Testing Hub");
     },10000);

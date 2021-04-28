@@ -1,17 +1,16 @@
 import { browser, by, element, ExpectedConditions as EC} from 'protractor';
 import {BasePage} from '../base.po'
 
-class InputTest extends BasePage{
+export class InputTest extends BasePage{
 
-    constructor(){
-        super();
-        this.fullname_txt= element(by.css("input#fullName"));
-        this.append_txt= element(by.css("input#join"));
-        this.get_txt= element(by.css("input#getMe"));
-        this.clear_txt= element(by.css("input#clearMe"));
-        this.noEdit_txt= element(by.css("input#noEdit"));
-        this.dontwrite_txt= element(by.css("input#dontwrite"));
-    }
+
+    public fullname_txt= element(by.css("input#fullName"));
+    public append_txt= element(by.css("input#join"));
+    public get_txt= element(by.css("input#getMe"));
+    public clear_txt= element(by.css("input#clearMe"));
+    public noEdit_txt= element(by.css("input#noEdit"));
+    public dontwrite_txt= element(by.css("input#dontwrite"));
+
 
     async testInputPage(){
         await browser.wait(EC.and(EC.presenceOf(this.fullname_txt),EC.presenceOf(this.append_txt)),5000);
@@ -27,5 +26,3 @@ class InputTest extends BasePage{
     }
 
 }
-
-exports.InputTest=InputTest;

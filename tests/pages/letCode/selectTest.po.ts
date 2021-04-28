@@ -1,16 +1,15 @@
 import { browser, by, element, ExpectedConditions as EC } from 'protractor';
 import {BasePage} from '../base.po'
 
-class SelectTest extends BasePage{
-    constructor(){
-        super();
-        this.fruits_sel= element(by.css("#fruits"));
-        this.language_sel= element(by.id("lang"));
-        this.apple_opt= element(by.cssContainingText('option','Apple'));
-        this.antman_opt= element(by.cssContainingText('option','Ant-Man'));
-        this.batman_opt= element(by.cssContainingText('option','Batman'));
+export class SelectTest extends BasePage{
+   
+    public fruits_sel= element(by.css("#fruits"));
+    public language_sel= element(by.id("lang"));
+    public apple_opt= element(by.cssContainingText('option','Apple'));
+    public antman_opt= element(by.cssContainingText('option','Ant-Man'));
+    public batman_opt= element(by.cssContainingText('option','Batman'));
 
-    }
+    
 
     async validateSelectTestPage(){
         await browser.wait(EC.presenceOf(this.fruits_sel),3000);

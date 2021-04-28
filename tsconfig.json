@@ -9,6 +9,7 @@
         "removeComments": false,
         "noImplicitAny": false,
         "skipLibCheck": true,
+        "resolveJsonModule": true,
         "outDir": "tests/jsFiles",
         "typeRoots": [
             "./node_modules/@types"

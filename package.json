@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build":"tsc",
     "webdriver-update": "webdriver-manager update",
     "test": "protractor ./tests/jsFiles/configs/cucumber.conf.js"
   },

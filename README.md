@@ -1,2 +1,2 @@
 # protractor-es6
-Protrator framework setup with cucumber using es6 syntax
+Protrator framework setup with cucumber using typescript

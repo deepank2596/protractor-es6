@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build":"tsc",
+    "build": "tsc",
     "webdriver-update": "webdriver-manager update",
-    "test": "protractor ./tests/jsFiles/configs/cucumber.conf.js"
+    "test": "protractor ./tests/jsFiles/configs/cucumber.conf.js",
+    "clean": "rimraf reports/ && rimraf tests/jsFiles"
   },
   "keywords": [],
   "author": "",
@@ -18,10 +19,14 @@
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "^13.13.51",
     "@types/selenium-webdriver": "^3.0.17",
+    "cucumber-html-reporter": "^5.4.0",
     "dotenv": "^8.2.0",
+    "fs-extra": "^8.1.0",
     "jasmine": "^2.8.0",
+    "mkdirp": "^1.0.4",
     "protractor": "^7.0.0",
     "protractor-cucumber-framework": "^8.0.2",
+    "rimraf": "^2.7.1",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4",
     "webdriver-manager": "^12.1.8"

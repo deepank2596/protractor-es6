@@ -1,4 +1,4 @@
-import { browser, by, element, ExpectedConditions as EC} from 'protractor';
+import { by, element, ExpectedConditions as EC} from 'protractor';
 import {BasePage} from  '../base.po';
 
 export class HomePage extends BasePage{

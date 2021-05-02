@@ -13,8 +13,10 @@ After({tags:"@testpage",timeout: 4* 5000},async ()=>{
     await browser.sleep(5000);
 });
 
-Given("Open LetCode in browser", {timeout: 24* 5000}, async()=>{
+Given("Open LetCode in browser", {timeout: 24* 5000}, async function(){
     await homePage.launchApp();
+    let screenshot=await browser.takeScreenshot();
+    await this.attach(screenshot,'image/png')
 });
 
 When("Perform login with {string} and {string}", {timeout: 5 * 5000},async(username, password)=>{

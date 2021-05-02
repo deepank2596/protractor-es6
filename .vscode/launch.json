@@ -8,12 +8,15 @@
             "type": "node",
             "request": "launch",
             "name": "ProtractorDebugger",
-            
-            
-            "args": ["${workspaceFolder}\\cucumber.conf.js"],
-            "program": "${workspaceFolder}\\node_modules\\protractor\\bin\\protractor",
+            "args": ["${workspaceFolder}/tests/jsFiles/configs/cucumber.conf.js"],
+            "program": "${workspaceFolder}/node_modules/protractor/bin/protractor",
+            "preLaunchTask": "tsc: build - tsconfig.json",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "cwd": "${workspaceFolder}",
             "sourceMaps": true,
-            "smartStep": true
+            "outFiles": ["${workspaceFolder}/tests/jsFiles/**/*.js"]
         }
     ]
 }
